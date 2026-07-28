@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace the example domain after publishing the website.
+Sitemap: https://www.example.com/sahni-pagri-house/sitemap.xml
