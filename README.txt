@@ -1,3 +1,7 @@
+FINAL ALL-PAGES TOP COLOUR UPDATE
+---------------------------------
+The black information/announcement bar and white logo/navigation bar styling now applies to Home, About, Products, Wedding Special and Contact. WhatsApp buttons retain their original gold styling.
+
 ============================================================
 SAHNEY PAGRI HOUSE — REDESIGNED STATIC WEBSITE
 ============================================================
