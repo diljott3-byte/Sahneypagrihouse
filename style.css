@@ -67,7 +67,7 @@ button, input, select, textarea { font: inherit; }
 .hero-visual { position: relative; min-height: 650px; padding: 4.5vw 5vw 4.5vw 0; display: grid; place-items: center; z-index: 2; }
 .hero-image-frame { width: 100%; height: 100%; min-height: 580px; overflow: hidden; position: relative; border: 1px solid rgba(243,217,130,.48); box-shadow: 22px 25px 0 rgba(5,14,29,.54); }
 .hero-image-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,24,50,.02) 50%, rgba(7,24,50,.66)); pointer-events: none; }
-.hero-image-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.hero-image-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 68% center; }
 .owner-card { position: absolute; left: -24px; bottom: 8%; width: min(330px, 70%); padding: 18px 22px; display: grid; gap: 5px; background: rgba(251,248,241,.96); color: var(--navy); border-left: 4px solid var(--gold); box-shadow: 0 18px 46px rgba(0,0,0,.22); }
 .owner-card span { color: #9a7420; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; }
 .owner-card strong { font-family: var(--serif); font-size: 18px; font-weight: 600; line-height: 1.25; }
@@ -147,9 +147,17 @@ button, input, select, textarea { font: inherit; }
 .footer-main a { font-size: 13px; }
 .footer-main a:hover { color: var(--gold-light); }
 .footer-bottom { max-width: 1320px; margin: 55px auto 0; padding-top: 18px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.12); color: #7f8997; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
-.floating-whatsapp { position: fixed; left: 20px; bottom: 20px; z-index: 45; min-width: 58px; height: 58px; padding: 0 20px; display: flex; align-items: center; gap: 9px; border-radius: 50px; color: var(--navy); background: linear-gradient(135deg, var(--gold-light), var(--gold)); box-shadow: 0 15px 34px rgba(4,13,28,.3); font-size: 12px; }
-.floating-whatsapp span { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid currentColor; border-radius: 50%; font-weight: 900; }
-.floating-whatsapp b { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.floating-whatsapp { display: none; }
+.quick-actions { position: fixed; right: 18px; bottom: 18px; z-index: 70; display: grid; justify-items: end; gap: 10px; }
+.quick-action { width: 148px; min-height: 52px; padding: 5px 5px 5px 15px; display: flex; align-items: center; justify-content: space-between; gap: 10px; color: white; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; box-shadow: 0 12px 30px rgba(3,9,19,.28); backdrop-filter: blur(10px); transition: transform .22s ease, box-shadow .22s ease, filter .22s ease; }
+.quick-action:hover, .quick-action:focus-visible { transform: translateX(-4px); box-shadow: 0 16px 38px rgba(3,9,19,.38); filter: brightness(1.05); }
+.quick-action:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+.quick-action-label { font-size: 10px; font-weight: 850; letter-spacing: .075em; text-transform: uppercase; white-space: nowrap; }
+.quick-action-icon { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.16); }
+.quick-action-icon svg { width: 21px; height: 21px; fill: currentColor; }
+.quick-action-whatsapp { background: linear-gradient(135deg, #159847, #25d366); }
+.quick-action-call { background: linear-gradient(135deg, var(--navy), var(--blue)); }
+.quick-action-location { color: var(--navy); background: linear-gradient(135deg, var(--gold-light), var(--gold)); border-color: rgba(7,24,50,.16); }
 
 /* Internal pages */
 .page-hero { padding: clamp(60px, 8vw, 112px) clamp(22px, 6vw, 96px); color: white; background: var(--navy); position: relative; overflow: hidden; }
@@ -266,7 +274,7 @@ button, input, select, textarea { font: inherit; }
       linear-gradient(180deg, rgba(3,10,21,.08) 0%, rgba(3,10,21,.04) 30%, rgba(3,10,21,.66) 59%, rgba(3,10,21,.97) 100%),
       linear-gradient(90deg, rgba(3,10,21,.22), transparent 68%);
   }
-  .hero-image-frame img { object-position: center center; }
+  .hero-image-frame img { object-position: 73% center; }
   .owner-card { display: none; }
   .hero-seal { z-index: 4; width: 66px; height: 66px; right: 15px; top: 18px; background: rgba(7,24,50,.76); backdrop-filter: blur(8px); box-shadow: 0 10px 26px rgba(0,0,0,.24); }
   .hero-seal b { font-size: 17px; }
@@ -301,8 +309,11 @@ button, input, select, textarea { font: inherit; }
   .experience-gallery .wide { grid-column: 1 / -1; grid-row: auto; }
   .footer-main { grid-template-columns: 1fr; gap: 42px; }
   .footer-bottom { flex-direction: column; margin-top: 42px; }
-  .floating-whatsapp { left: 14px; bottom: 14px; min-width: 52px; height: 52px; padding: 0 12px; }
-  .floating-whatsapp b { display: none; }
+  .quick-actions { right: 12px; bottom: 12px; gap: 8px; }
+  .quick-action { width: 49px; min-height: 49px; padding: 4px; }
+  .quick-action:hover, .quick-action:focus-visible { transform: translateX(-2px); }
+  .quick-action-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .quick-action-icon { width: 39px; height: 39px; flex-basis: 39px; }
   .page-hero { padding: 56px 20px 70px; }
   .page-hero-grid, .intro-grid, .story-grid, .wedding-editorial, .contact-grid { grid-template-columns: 1fr; }
   .page-hero-image { height: 430px; }
